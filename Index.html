@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraTech | Tienda Gamer</title>
+
+  <!-- 🔗 Enlace a tu hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 🔤 Íconos de Font Awesome -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+
+<body>
+
+  <!-- ==========================
+       ENCABEZADO / HEADER
+  =========================== -->
+  <header>
+    <!-- 🧠 LOGO DE LA MARCA -->
+    <div class="logo">
+      <img src="images/Presentación_Empresarial_Tecnología_Inteligencia_Artificial_Digital_Moderno_Azul_Oscuro-removebg-preview.png" alt="Logo AuraTech">
+      <h1>AuraTech</h1>
+    </div>
+
+    <!-- 🔍 BUSCADOR DE PRODUCTOS -->
+    <div class="buscador">
+      <div class="buscador-input">
+        <input type="text" id="search" placeholder="Buscar productos gamer...">
+        <button id="btn-buscar">🔍</button>
+      </div>
+      <div id="sugerencias" class="sugerencias"></div>
+    </div>
+    
+    <!-- 👤 USUARIO + CARRITO -->
+    <div class="usuario">
+    <a href="/Inicio sesion/">Inicia Sesión</a>
+      
+      <!-- 🛒 CARRITO DE COMPRAS -->
+      <div class="carrito">
+        <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Carrito" class="icono-carrito">
+
+        <!-- 🔽 MENÚ DESPLEGABLE DEL CARRITO -->
+        <div class="dropdown-carrito">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <!-- 🧺 Por defecto el carrito está vacío -->
+              <tr>
+                <td colspan="5" class="empty">Empty Cart</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cart-total">Total: $0</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================
+       MENÚ DE NAVEGACIÓN
+  =========================== -->
+  <nav>
+    <ul>
+      <li><a href="#">Nuevo Ingreso</a></li>
+      <li><a href="#">Ofertas</a></li>
+
+      <!-- 🔽 SUBMENÚ DE COMPONENTES -->
+      <li class="dropdown">
+        <a href="#">Componentes ▾</a>
+        <ul class="submenu">
+          <li><a href="#">Tarjetas Gráficas</a></li>
+          <li><a href="#">Procesadores</a></li>
+          <li><a href="#">Placas Base</a></li>
+          <li><a href="#">Memorias RAM</a></li>
+          <li><a href="#">Almacenamiento SSD / HDD</a></li>
+          <li><a href="#">Refrigeración</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==========================
+       SECCIÓN HERO PRINCIPAL
+  =========================== -->
+  <section class="hero">
+    <div class="hero-intro">
+      <!-- 🖼️ Imagen decorativa -->
+      <div class="hero-image">
+        <img src="images/d6582a50-2a2e-4255-be20-9e75c5d53aed.png" alt="Gojo">
+      </div>
+
+      <!-- 💬 Texto de presentación -->
+      <div class="hero-info">
+        <h1 class="hero-title">Somos AuraTech.<br>Venta de las mejores importaciones en tecnología.</h1>
+        <p class="hero-text">
+          En AuraTech impulsamos tu poder gamer y profesional con equipos diseñados para ir más allá del estándar.
+          Nuestras PCs y laptops combinan fuerza, velocidad y precisión para que domines cada partida o proyecto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================
+       CARRUSEL DE IMÁGENES
+  =========================== -->
+  <main>
+    <div class="container">
+      <div class="slide" id="slide">
+        <!-- 🎞️ Cada item es una imagen del carrusel -->
+        <div class="item" style="background-image: url('images/1.webp');"></div>
+        <div class="item" style="background-image: url('images/2.jpg');"></div>
+        <div class="item" style="background-image: url('images/3.jpg');"></div>
+        <div class="item" style="background-image: url('images/4.jpg');"></div>
+        <div class="item" style="background-image: url('images/5.webp');"></div>
+      </div>
+
+      <!-- ⬅️➡️ Botones de navegación del carrusel -->
+      <div class="button">
+        <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================
+       BANNER PROMOCIONAL
+  =========================== -->
+  <section class="banner-promocional">
+    <div class="banner-left">
+      <img src="images/BANNER-AEROCOOL-CYLON-4F-ARGB-WHITE.jpg" alt="Refrigeración AeroCool RIME 4F">
+    </div>
+    <div class="banner-right">
+      <img src="images/BANNER-RIME-4-DUAL-ARGB-BLACK.jpg" alt="Refrigeración AeroCool CYLON 4F">
+    </div>
+  </section>
+
+  <!-- ==========================
+       SECCIÓN DE PRODUCTOS
+  =========================== -->
+  <section class="productos">
+    <h2>Nuevos Productos</h2>
+
+    <!-- 🧱 Rejilla de tarjetas de producto -->
+    <div class="grid-productos">
+
+      <!-- 💻 Cada "card" representa un producto -->
+      <div class="card">
+        <img src="images/p1.webp" alt="Monitor Gamer">
+        <h3>Monitor Gamer 27"</h3>
+        <p>Resolución 2K, 144Hz.</p>
+        <span class="precio">S/ 820.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p3.webp" alt="Tarjeta Gráfica">
+        <h3>Tarjeta RTX 4060</h3>
+        <p>8GB GDDR6, alto rendimiento.</p>
+        <span class="precio">S/ 1,450.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p4.webp" alt="Teclado RGB">
+        <h3>Teclado Mecánico RGB</h3>
+        <p>Switches azules, retroiluminado.</p>
+        <span class="precio">S/ 295.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p6.webp" alt="Auriculares Gamer">
+        <h3>Auriculares Gamer</h3>
+        <p>Sonido envolvente 7.1.</p>
+        <span class="precio">S/ 170.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <!-- 🔁 Más productos... -->
+      <div class="card">
+        <img src="images/p5.webp" alt="Mouse Gamer">
+        <h3>Mouse Gamer</h3>
+        <p>Sensor óptico, RGB.</p>
+        <span class="precio">S/ 95.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p7.webp" alt="Monitor Gamer">
+        <h3>Monitor Gamer 27"</h3>
+        <p>Resolución 2K, 144Hz.</p>
+        <span class="precio">S/ 820.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p8.webp" alt="Disco Duro">
+        <h3>Disco Duro 1TB</h3>
+        <p>Almacenamiento seguro.</p>
+        <span class="precio">S/ 220.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p9.webp" alt="Tarjeta Gráfica">
+        <h3>Tarjeta RTX 4060</h3>
+        <p>8GB GDDR6, alto rendimiento.</p>
+        <span class="precio">S/ 1,450.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p10.jpg" alt="Teclado">
+        <h3>Teclado Mecánico RGB</h3>
+        <p>Switches azules, retroiluminado.</p>
+        <span class="precio">S/ 295.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/p2.webp" alt="Dusco Duro">
+        <h3>Discuo Duro 1T</h3>
+        <p>Almacenamiento Seguro.</p>
+        <span class="precio">S/ 295.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+    </div>
+    <!-- ==========================
+     SECCIÓN DE PROMOCIONES
+========================== -->
+<section class="promos-banner">
+  <h2>🔥 Ofertas Especiales 🔥</h2>
+  <div class="promos-container">
+    <img src="images/2459710539.jpg" alt="Promo ASROCK 24.5 CL25FF">
+    <img src="images/3276838814.jpg" alt="Promo MSI 24 G2422C">
+    <img src="images/unnamed (1).jpg" alt="Promo MSI 27 G275L E14">
+  </div>
+  <!-- ==========================
+     SECCIÓN DE LAPTOPS EN OFERTA
+========================== -->
+<section class="laptops-section">
+  <h2>💻 Laptops en Oferta 💻</h2>
+
+  <div class="laptop-slider-container">
+    <button class="slider-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+    <div class="laptop-slider">
+      <div class="card">
+        <img src="images/lapto1.jpg" alt="Laptop ASUS TUF Gaming">
+        <h3>Laptop ASUS TUF Gaming</h3>
+        <p>Intel Core i5, RTX 3050, 16GB RAM</p>
+        <span class="precio">S/ 3,899.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto2.jpg" alt="Laptop HP Omen 16">
+        <h3>Laptop HP Omen 16</h3>
+        <p>Ryzen 7, RTX 4060, 16GB RAM</p>
+        <span class="precio">S/ 4,499.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto3.png" alt="Laptop Lenovo Legion 5">
+        <h3>Laptop Lenovo Legion 5</h3>
+        <p>Ryzen 7, RTX 3070, 16GB RAM</p>
+        <span class="precio">S/ 5,299.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto4.jpg" alt="Laptop Acer Nitro 5">
+        <h3>Laptop Acer Nitro 5</h3>
+        <p>Intel i7, RTX 4060, 1TB SSD</p>
+        <span class="precio">S/ 3,599.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto5.jpg" alt="Laptop Dell G15">
+        <h3>Laptop Dell G15</h3>
+        <p>Intel Core i7, RTX 4050, 16GB RAM</p>
+        <span class="precio">S/ 4,199.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto6.jpg" alt="Laptop MSI Katana 17">
+        <h3>Laptop MSI Katana 17</h3>
+        <p>Intel i7, RTX 4070, 32GB RAM</p>
+        <span class="precio">S/ 5,899.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto7.jpg" alt="Laptop Razer Blade 15">
+        <h3>Laptop Razer Blade 15</h3>
+        <p>Intel i9, RTX 4080, 32GB RAM</p>
+        <span class="precio">S/ 9,499.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="images/lapto8.jpg" alt="Laptop ASUS ROG Zephyrus G14">
+        <h3>Laptop ASUS ROG Zephyrus G14</h3>
+        <p>Ryzen 9, RTX 4070, 32GB RAM</p>
+        <span class="precio">S/ 7,999.00</span>
+        <button>Ver más</button>
+        <button class="agregar-carrito">Agregar al carrito</button>
+      </div>
+    </div>
+
+    <button class="slider-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  </section>
+
+  <!-- ==========================
+       PIE DE PÁGINA / FOOTER
+  =========================== -->
+  <footer>
+    <p>*Imágenes referenciales. Aplican términos y condiciones.</p>
+    <p>© 2025 AuraTech - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- 🧠 Archivo JavaScript con toda la lógica -->
+  <script src="script.js"></script>
+</body>
+</html>
